@@ -55,16 +55,8 @@
               }
             },
             "libraries": [
-               "-l../portaudio/bin/portaudio_x64.lib"
+               "-l../portaudio/bin/portaudio_static_x64.lib"
             ],
-            "copies": [
-              {
-                "destination": "build/Release",
-                "files": [
-                  "portaudio/bin/portaudio_x64.dll"
-                ]
-              }
-            ]
           },
         ],
         [
@@ -73,7 +65,7 @@
               ['target_arch=="arm"', {
                 "link_settings": {
                   "libraries": [
-                    "<@(module_root_dir)/build/Release/libportaudio.so.2" 
+                    "<@(module_root_dir)/build/Release/libportaudio.so.2"
                   ],
                   "ldflags": [
                     "-L<@(module_root_dir)/build/Release",

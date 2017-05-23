@@ -54,9 +54,17 @@
                 }
               }
             },
-            "libraries": [
-               "-l../portaudio/bin/portaudio_static_x64.lib"
-            ],
+            'conditions': [
+              ['target_arch=="x64"', {
+                'libraries': [
+                  '../portaudio/bin/portaudio_static_x64.lib'
+                ],
+              }, {
+                'libraries': [
+                  '../portaudio/bin/portaudio_static_x86.lib'
+                ],
+              }],
+            ]
           },
         ],
         [
